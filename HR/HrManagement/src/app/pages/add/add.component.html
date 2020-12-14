@@ -1,0 +1,91 @@
+<app-header></app-header>
+
+<div class="add-main">
+    <h2 class="text-center">Add Candidate Deatails</h2>
+    <form [formGroup]="addForm" novalidate class="form">
+        <div class="form-group">
+            <label for="cId">First Name</label>
+            <input type="text" formControlName="fName" placeholder="Candidate Name" name="fName" class="form-control">
+        </div>
+        <div class="alert alert-danger" *ngIf="addForm.get('fName').hasError('required') && addForm.get('fName').touched">
+            Please Enter First Name
+        </div>
+        
+        <div class="form-group">
+            <label for="cId">Last Name</label>
+            <input type="text" formControlName="lName" placeholder="Candidate last Name" name="lName" class="form-control">
+        </div>
+        <div class="alert alert-danger" *ngIf="addForm.get('lName').hasError('required') && addForm.get('lName').touched">
+            Please Enter Last Name
+        </div>
+
+        <div class="form-group">
+            <label for="cId">Age</label>
+            <input type="number" formControlName="age" placeholder="Candidate Age" name="age" class="form-control">
+        </div>
+        <div class="alert alert-danger" *ngIf="addForm.get('age').hasError('required') && addForm.get('age').touched">
+            Please Enter Age
+        </div>
+        <div class="alert alert-danger" *ngIf="addForm.get('age').hasError('maxlength') && addForm.get('age').touched">
+            Please Enter Correct Age
+        </div>
+
+        <div class="form-group">
+            <label for="cId">Email</label>
+            <input type="email" formControlName="email" placeholder="Email" name="email" class="form-control">
+        </div>
+        <div class="alert alert-danger" *ngIf="addForm.get('email').hasError('maxlength') && addForm.get('email').touched">
+            Max 30 charaters are allow
+        </div>
+        <div class="alert alert-danger" *ngIf="addForm.get('email').hasError('required') && addForm.get('email').touched">
+            Please Enter Email
+        </div>
+        <div class="alert alert-danger" *ngIf="addForm.get('email').hasError('pattern') && addForm.get('email').touched">
+            Please Enter Valid Email
+        </div>
+
+        <div class="form-group">
+            <label for="cId">Phone No</label>
+            <input type="number" formControlName="phone" placeholder="Candidate Phone No" name="phone" class="form-control">
+        </div>
+        <div class="alert alert-danger" *ngIf="addForm.get('phone').hasError('required') && addForm.get('phone').touched">
+            Please Enter Phone No
+        </div>
+        <div class="alert alert-danger" *ngIf="addForm.get('phone').hasError('maxlength') && addForm.get('age').touched">
+            Please Enter 10 number
+        </div>
+
+        <div class="form-group">
+            <label for="cId">Qualification</label>
+            <input type="text" formControlName="qualification" placeholder="Candidate Qualification" name="qualification" class="form-control">
+        </div>
+        <div class="alert alert-danger" *ngIf="addForm.get('qualification').hasError('required') && addForm.get('qualification').touched">
+            Please Enter Qualification
+        </div>
+
+        <div class="form-group">
+            <label for="cId">Position</label>
+            <input type="text" formControlName="position" placeholder="Candidate Position" name="position" class="form-control">
+        </div>
+        <div class="alert alert-danger" *ngIf="addForm.get('position').hasError('required') && addForm.get('position').touched">
+            Please Enter Position
+        </div>
+
+        <div class="form-group">
+        <label for="cId">Choose a Status:</label>
+        <select name="status" id="status" class="form-control" formControlName="status">
+          <option value="Scheduled" selected>Scheduled</option>
+          <option value="Completed">Completed</option>
+          <option value="Canceled">Canceled</option>
+        </select>
+        </div>
+
+
+        <div class="form-group">
+            <input type="date" class="form-control" formControlName="date" name="date">
+        </div>
+
+        <button class="btn btn-success" [disabled]="addForm.invalid" (click)="onSubmit()">Save</button>
+    </form><br>
+</div>
+              

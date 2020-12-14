@@ -1,0 +1,63 @@
+ <app-header></app-header>
+ <h2 class="text-center">View Candidate Deatails</h2>
+<br>
+ <table class="table table-striped table-bordered table-sm row-border hover" datatable [dtOptions]="dtOptions">
+    <thead>
+      <tr>
+        <th>NO</th>
+        <th>ID</th>
+        <th>FIRST NAME</th>
+        <th>LAST NAME</th>
+        <th>AGE</th>
+        <th>PHONE</th>
+        <th>QUALIFICATION</th>
+        <th>POSITION</th>
+        <th>EMAIL</th>
+        <th>STATUS</th>
+        <th>DATE</th>
+        <th>TIME</th> 
+        <th>EDIT</th>
+        <th>DELETE</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let ctd of candidate; let i = index">
+        <td>{{i + 1}}</td>
+        <td>{{ctd.cId}}</td>
+        <td>{{ctd.fName}}</td>
+        <td>{{ctd.lName}}</td>
+        <td>{{ctd.age}}</td>
+        <td>{{ctd.phone}}</td>
+        <td>{{ctd.qualification}}</td>
+        <td>{{ctd.position}}</td>
+        <td>{{ctd.email}}</td>
+        <td>{{ctd.status}}</td>
+        <td>{{ctd.date}}</td>
+        <td>{{ctd.time}}</td>
+        <td><button class="btn btn-success" (click)="edit(ctd)">EDIT</button></td>
+        <td><button class="btn btn-danger" (click)="delete(ctd)">DELETE</button></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+<!-- <div class="container"><br>
+        <h2>Candidate Record</h2> 
+        
+    <div class="search-container" >
+      <form action="/action_page.php">
+          <input type="text" placeholder="Search.." name="search" (input) ="search($event.target.value)">
+        </form>
+    </div>  
+   <br>      
+   <table class="table table-striped">
+     <thead></thead>
+
+     <tbody>
+      <tr *ngFor="let ctd of candidate; let i = index">    
+      </tr>           
+      </tbody>
+      </table>
+    <a routerLink="/add" class="btn btn-primary"> Add New Candidate</a>  
+
+</div> -->

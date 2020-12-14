@@ -1,0 +1,26 @@
+.topnav {
+    overflow: hidden;
+    background-color: #099c0493;
+  }
+  
+  .design{
+    float: left;
+    display: block;
+    color: #e4e3e3;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    border: #062202;
+  }
+
+  .logout{
+    float: right;
+    display: block;
+    /* color: black; */
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    background-color: #c40101e0;
+  }
